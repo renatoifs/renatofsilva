@@ -6,7 +6,6 @@ function toggleLanguage() {
     currentLang = currentLang === 'pt' ? 'en' : 'pt';
     updateContent();
     updateLangIndicator();
-    // Store preference
     localStorage.setItem('preferredLang', currentLang);
 }
 
@@ -19,8 +18,6 @@ function updateContent() {
             el.textContent = text;
         }
     });
-    
-    // Update HTML lang attribute
     document.documentElement.lang = currentLang;
 }
 
@@ -32,7 +29,6 @@ function updateLangIndicator() {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    // Check for stored preference
     const storedLang = localStorage.getItem('preferredLang');
     if (storedLang && (storedLang === 'pt' || storedLang === 'en')) {
         currentLang = storedLang;
