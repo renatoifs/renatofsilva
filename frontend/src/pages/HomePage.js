@@ -5,31 +5,16 @@ import { ExternalLink } from 'lucide-react';
 export const HomePage = () => {
   const { t } = useLanguage();
 
-  // Organized profile links by category
-  const profileLinkGroups = [
-    {
-      title: t('home.identifiers'),
-      links: [
-        { name: 'ORCID', url: 'https://orcid.org/0000-0001-6517-6021' },
-        { name: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=57221854262' },
-        { name: 'Web of Science', url: 'https://www.webofscience.com/wos/author/record/JVK-7054-2024' },
-      ]
-    },
-    {
-      title: t('home.platforms'),
-      links: [
-        { name: 'CIÊNCIAVITAE', url: 'https://www.cienciavitae.pt//3611-8266-7514' },
-        { name: 'Authenticus', url: 'https://www.authenticus.pt/en/profileOfResearchers/publicationsList/619254' },
-        { name: 'Google Scholar', url: 'https://scholar.google.com/citations?hl=en&user=hw4VpSEAAAAJ' },
-      ]
-    },
-    {
-      title: t('home.networks'),
-      links: [
-        { name: 'ResearchGate', url: 'https://www.researchgate.net/profile/Renato-Ferreira-Da-Silva-2' },
-        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/renatoifsilva/' },
-      ]
-    }
+  // All profile links together
+  const profileLinks = [
+    { name: 'ORCID', url: 'https://orcid.org/0000-0001-6517-6021' },
+    { name: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=57221854262' },
+    { name: 'Web of Science', url: 'https://www.webofscience.com/wos/author/record/JVK-7054-2024' },
+    { name: 'CIÊNCIAVITAE', url: 'https://www.cienciavitae.pt//3611-8266-7514' },
+    { name: 'Authenticus', url: 'https://www.authenticus.pt/en/profileOfResearchers/publicationsList/619254' },
+    { name: 'Google Scholar', url: 'https://scholar.google.com/citations?hl=en&user=hw4VpSEAAAAJ' },
+    { name: 'ResearchGate', url: 'https://www.researchgate.net/profile/Renato-Ferreira-Da-Silva-2' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/renatoifsilva/' },
   ];
 
   return (
