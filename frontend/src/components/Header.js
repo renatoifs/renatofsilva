@@ -23,6 +23,11 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo/Name */}
           <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_prof-porto/artifacts/cqn8r87d_Logofmup.jpg"
+              alt="FMUP Logo"
+              className="h-12 w-auto object-contain"
+            />
             <div className="flex flex-col">
               <span className="text-xl font-semibold text-slate-900">
                 Renato Ferreira da Silva
