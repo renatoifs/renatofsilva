@@ -78,33 +78,24 @@ export const HomePage = () => {
                 </p>
               </div>
 
-              {/* Profile Links - Organized by Category */}
+              {/* Profile Links - All Together */}
               <div className="pt-6">
                 <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4">
-                  Academic Profiles
+                  Academic & Professional Profiles
                 </h3>
-                <div className="space-y-6">
-                  {profileLinkGroups.map((group, idx) => (
-                    <div key={idx}>
-                      <p className="text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">
-                        {group.title}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {group.links.map((link) => (
-                          <a
-                            key={link.name}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            data-testid={`profile-link-${link.name.toLowerCase()}`}
-                            className="inline-flex items-center space-x-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors"
-                          >
-                            <span>{link.name}</span>
-                            <ExternalLink size={14} />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
+                <div className="flex flex-wrap gap-3">
+                  {profileLinks.map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`profile-link-${link.name.toLowerCase()}`}
+                      className="inline-flex items-center space-x-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors"
+                    >
+                      <span>{link.name}</span>
+                      <ExternalLink size={14} />
+                    </a>
                   ))}
                 </div>
               </div>
