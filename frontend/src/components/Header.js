@@ -56,17 +56,29 @@ export const Header = () => {
             ))}
           </div>
 
-          {/* Language Toggle */}
-          <button
-            onClick={toggleLanguage}
-            data-testid="language-toggle"
-            className="flex items-center space-x-2 px-4 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 transition-colors"
-          >
-            <Globe size={18} className="text-slate-700" />
-            <span className="text-sm font-medium text-slate-700">
-              {language === 'en' ? 'PT' : 'EN'}
-            </span>
-          </button>
+          {/* Language Toggle & Admin */}
+          <div className="flex items-center space-x-3">
+            <Link
+              to="/admin/login"
+              className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-slate-300 hover:bg-slate-50 transition-colors text-slate-700"
+              data-testid="admin-login-button"
+              title="Admin Login"
+            >
+              <Settings size={18} />
+              <span className="hidden md:inline text-sm font-medium">Admin</span>
+            </Link>
+            
+            <button
+              onClick={toggleLanguage}
+              data-testid="language-toggle"
+              className="flex items-center space-x-2 px-4 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 transition-colors"
+            >
+              <Globe size={18} className="text-slate-700" />
+              <span className="text-sm font-medium text-slate-700">
+                {language === 'en' ? 'PT' : 'EN'}
+              </span>
+            </button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
