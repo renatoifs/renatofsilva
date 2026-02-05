@@ -21,21 +21,13 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo/Name */}
-          <Link to="/" className="flex items-center space-x-3">
+          {/* Logo Only */}
+          <Link to="/" className="flex items-center">
             <img 
               src="https://customer-assets.emergentagent.com/job_prof-porto/artifacts/8z0u74th_logoFMUP_geral.png"
               alt="FMUP Logo"
-              className="h-12 w-auto object-contain"
+              className="h-14 w-auto object-contain"
             />
-            <div className="flex flex-col">
-              <span className="text-xl font-semibold text-slate-900">
-                Renato Ferreira da Silva
-              </span>
-              <span className="text-xs text-slate-600">
-                FMUP
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
