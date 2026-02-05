@@ -61,6 +61,22 @@ class ContactForm(BaseModel):
     subject: str
     message: str
 
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
+class ContentUpdate(BaseModel):
+    section: str
+    language: str
+    field: str
+    value: str
+
+class ContentVersionCreate(BaseModel):
+    section: str
+    content: Dict[str, Any]
+    author: str
+    message: Optional[str] = None
+
 
 # Authenticus Scraper
 async def scrape_authenticus_publications():
