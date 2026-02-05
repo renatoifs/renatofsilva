@@ -4,7 +4,7 @@ Professional bilingual (Portuguese/English) academic website for Professor at Fa
 
 ## 🌐 Live Site
 - **Production**: [Your custom domain]
-- **Preview**: https://prof-porto.preview.emergentagent.com
+- **Preview**: https://faculty-renato.preview.emergentagent.com
 
 ## 🚀 Features
 

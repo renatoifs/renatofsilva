@@ -1,7 +1,7 @@
 # URL Personalizada para o Site - Instruções
 
 ## Situação Atual
-**URL Atual**: `https://prof-porto.preview.emergentagent.com`
+**URL Atual**: `https://faculty-renato.preview.emergentagent.com`
 
 Este é um URL temporário/preview fornecido pela plataforma Emergent.
 
