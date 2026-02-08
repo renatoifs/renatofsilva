@@ -28,6 +28,26 @@ function updateLangIndicator() {
     indicator.textContent = currentLang === 'pt' ? 'EN' : 'PT';
 }
 
+// Mobile menu functions
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+}
+
+function closeMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.remove('active');
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    const menu = document.getElementById('mobileMenu');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    if (menu && menuBtn && !menu.contains(e.target) && !menuBtn.contains(e.target)) {
+        menu.classList.remove('active');
+    }
+});
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     // Ensure page starts at top

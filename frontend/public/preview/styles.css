@@ -54,7 +54,7 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.97);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--slate-200);
     z-index: 1000;
@@ -83,18 +83,20 @@ img {
 
 .nav-links {
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
+    align-items: center;
 }
 
 .nav-links a {
     font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--slate-600);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     transition: color 0.2s ease;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -103,24 +105,69 @@ img {
 
 /* === LANGUAGE TOGGLE === */
 .lang-toggle {
-    position: fixed;
-    top: 0.85rem;
-    right: 1.5rem;
     background: var(--slate-800);
     color: var(--white);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    z-index: 1001;
     letter-spacing: 0.05em;
+    margin-left: 1.5rem;
+    flex-shrink: 0;
 }
 
 .lang-toggle:hover {
     background: var(--slate-700);
+}
+
+/* === MOBILE MENU === */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: var(--slate-700);
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 1rem;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--slate-200);
+    flex-direction: column;
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu a {
+    padding: 0.875rem 2rem;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--slate-700);
+    text-decoration: none;
+    border-bottom: 1px solid var(--slate-100);
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu a:hover {
+    background: var(--slate-50);
 }
 
 /* === HERO SECTION === */
@@ -138,8 +185,8 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
     align-items: center;
     padding: 2rem;
 }
@@ -153,8 +200,8 @@ img {
 
 .photo-frame {
     position: relative;
-    width: 100%;
-    max-width: 400px;
+    width: 340px;
+    flex-shrink: 0;
 }
 
 .photo-bg {
@@ -166,8 +213,7 @@ img {
     height: auto;
     object-fit: cover;
     object-position: center top;
-    mask-image: radial-gradient(ellipse 85% 85% at center, black 50%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 85% 85% at center, black 50%, transparent 100%);
+    border-radius: 1rem;
 }
 
 /* Info */
@@ -181,11 +227,12 @@ img {
 
 .name-block h1 {
     font-family: var(--font-serif);
-    font-size: 3.25rem;
+    font-size: 3rem;
     font-weight: 400;
     color: var(--slate-900);
     line-height: 1.15;
     margin-bottom: 0.25rem;
+    white-space: nowrap;
 }
 
 .credentials {
@@ -570,7 +617,7 @@ footer p {
     }
 
     .photo-frame {
-        max-width: 320px;
+        width: 320px;
     }
 
     .profile-links {
@@ -583,21 +630,27 @@ footer p {
 
     .name-block h1 {
         font-size: 2.5rem;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+
+    .lang-toggle {
+        margin-left: auto;
+    }
+
+    .mobile-menu-btn {
+        display: block;
     }
 }
 
 @media (max-width: 768px) {
     .navbar {
         padding: 0 1rem;
-    }
-
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .nav-links a {
-        font-size: 0.625rem;
-        letter-spacing: 0.05em;
     }
 
     .nav-logo-img {
@@ -613,7 +666,7 @@ footer p {
     }
 
     .photo-frame {
-        max-width: 260px;
+        width: 280px;
     }
 
     .name-block h1 {
@@ -648,20 +701,12 @@ footer p {
 }
 
 @media (max-width: 480px) {
-    .nav-links {
-        gap: 0.5rem;
-    }
-
-    .nav-links a {
-        font-size: 0.5625rem;
-    }
-
     .hero-info {
         padding: 0.5rem 1rem 1.5rem;
     }
 
     .photo-frame {
-        max-width: 220px;
+        width: 240px;
     }
 
     .name-block h1 {
@@ -678,9 +723,7 @@ footer p {
     }
 
     .lang-toggle {
-        top: 0.5rem;
-        right: 0.5rem;
-        padding: 0.3rem 0.6rem;
+        padding: 0.4rem 0.8rem;
         font-size: 0.6875rem;
     }
 
