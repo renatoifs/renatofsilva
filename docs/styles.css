@@ -130,31 +130,31 @@ img {
     padding: 5rem 0 0 0;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .hero-container {
     width: 100%;
-    max-width: 1600px;
+    max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
-    align-items: stretch;
+    gap: 3rem;
+    align-items: center;
+    padding: 2rem;
 }
 
 /* Photo */
 .hero-photo {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding-left: 4rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .photo-frame {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    height: auto;
+    max-width: 400px;
 }
 
 .photo-bg {
@@ -166,6 +166,8 @@ img {
     height: auto;
     object-fit: cover;
     object-position: center top;
+    mask-image: radial-gradient(ellipse 85% 85% at center, black 50%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 85% 85% at center, black 50%, transparent 100%);
 }
 
 /* Info */
@@ -174,7 +176,7 @@ img {
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
-    padding: 4rem 4rem 4rem 3rem;
+    padding: 2rem 1rem;
 }
 
 .name-block h1 {
@@ -205,7 +207,6 @@ img {
     font-size: 1.25rem;
     font-weight: 400;
     color: var(--slate-700);
-    font-style: italic;
 }
 
 .dept {
@@ -229,7 +230,6 @@ img {
     font-size: 1rem;
     font-weight: 400;
     color: var(--slate-700);
-    font-style: italic;
 }
 
 .expert-center {
@@ -291,6 +291,33 @@ img {
 .profile-btn i {
     font-size: 0.6875rem;
     opacity: 0.7;
+}
+
+/* === INTERESTS SECTION === */
+.interests {
+    background: var(--white);
+    padding: 4rem 2rem;
+    border-bottom: 1px solid var(--slate-200);
+}
+
+.interests-container {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.interests h2 {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: var(--slate-900);
+    margin-bottom: 1.5rem;
+}
+
+.interests-list {
+    font-size: 1rem;
+    color: var(--slate-600);
+    line-height: 2;
 }
 
 /* === BIOGRAPHY SECTION === */
@@ -527,24 +554,23 @@ footer p {
 @media (max-width: 1024px) {
     .hero-container {
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: 2rem;
     }
 
     .hero-photo {
         justify-content: center;
-        padding: 2rem;
         order: 1;
     }
 
     .hero-info {
-        padding: 2rem;
+        padding: 1rem 2rem 2rem;
         text-align: center;
         align-items: center;
         order: 2;
     }
 
     .photo-frame {
-        max-width: 350px;
+        max-width: 320px;
     }
 
     .profile-links {
@@ -561,16 +587,33 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.625rem;
+        letter-spacing: 0.05em;
+    }
+
+    .nav-logo-img {
+        height: 32px;
+    }
+
     .hero {
         padding-top: 4rem;
     }
 
-    .hero-photo {
-        padding: 1.5rem;
+    .hero-info {
+        padding: 1rem 1.5rem 2rem;
     }
 
     .photo-frame {
-        max-width: 280px;
+        max-width: 260px;
     }
 
     .name-block h1 {
@@ -582,58 +625,75 @@ footer p {
     }
 
     .logos-row {
-        gap: 2rem;
-    }
-
-    .logo-link img {
-        height: 45px;
-    }
-
-    .nav-links {
         gap: 1.5rem;
     }
 
-    .nav-links a {
-        font-size: 0.75rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-photo {
-        padding: 1rem;
-    }
-
-    .hero-info {
-        padding: 1.5rem 1rem;
-    }
-
-    .photo-frame {
-        max-width: 240px;
-    }
-
-    .name-block h1 {
-        font-size: 1.75rem;
-    }
-
-    .role {
-        font-size: 1.125rem;
-    }
-
-    .profile-btn {
-        padding: 0.4375rem 0.75rem;
-        font-size: 0.75rem;
-    }
-
-    .lang-toggle {
-        top: 0.75rem;
-        right: 1rem;
-        padding: 0.375rem 0.75rem;
-        font-size: 0.75rem;
+    .logo-link img {
+        height: 40px;
     }
 
     .biography h2,
     .memberships h2,
-    .contact h2 {
+    .contact h2,
+    .interests h2 {
         font-size: 1.75rem;
+    }
+
+    .biography,
+    .memberships,
+    .interests,
+    .contact {
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.5625rem;
+    }
+
+    .hero-info {
+        padding: 0.5rem 1rem 1.5rem;
+    }
+
+    .photo-frame {
+        max-width: 220px;
+    }
+
+    .name-block h1 {
+        font-size: 1.625rem;
+    }
+
+    .role {
+        font-size: 1rem;
+    }
+
+    .profile-btn {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.6875rem;
+    }
+
+    .lang-toggle {
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.6875rem;
+    }
+
+    .biography h2,
+    .memberships h2,
+    .contact h2,
+    .interests h2 {
+        font-size: 1.5rem;
+    }
+
+    .bio-content p,
+    .membership-list li,
+    .interests-list {
+        font-size: 0.875rem;
     }
 }
