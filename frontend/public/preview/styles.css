@@ -195,7 +195,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 0.5rem;
+    padding-top: 1.5rem;
 }
 
 .photo-frame {
@@ -227,7 +227,7 @@ img {
 
 .name-block h1 {
     font-family: var(--font-serif);
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 400;
     color: var(--slate-900);
     line-height: 1.15;
@@ -237,7 +237,7 @@ img {
 
 .credentials {
     font-family: var(--font-sans);
-    font-size: 0.9375rem;
+    font-size: 1.125rem;
     color: var(--slate-500);
     font-weight: 400;
     letter-spacing: 0.02em;
