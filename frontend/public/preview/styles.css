@@ -4,17 +4,16 @@
     --slate-100: #f1f5f9;
     --slate-200: #e2e8f0;
     --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
     --slate-500: #64748b;
     --slate-600: #475569;
     --slate-700: #334155;
     --slate-800: #1e293b;
     --slate-900: #0f172a;
-    --warm-50: #faf9f7;
-    --warm-100: #f0eeeb;
-    --warm-200: #e5e2dd;
-    --warm-300: #d4cfc7;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
     --white: #ffffff;
-    --accent: #5a7c6f;
     --font-serif: 'Playfair Display', Georgia, serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -172,7 +171,7 @@ img {
 
 /* === HERO SECTION === */
 .hero {
-    background: var(--warm-100);
+    background: var(--gray-100);
     min-height: 100vh;
     padding: 5rem 0 0 0;
     display: flex;
@@ -213,7 +212,7 @@ img {
     height: auto;
     object-fit: cover;
     object-position: center top;
-    border-radius: 1rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
 /* Info */
@@ -250,9 +249,9 @@ img {
 }
 
 .role {
-    font-family: var(--font-serif);
-    font-size: 1.25rem;
-    font-weight: 400;
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    font-weight: 500;
     color: var(--slate-700);
 }
 
@@ -273,9 +272,9 @@ img {
 }
 
 .expert-title {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--slate-700);
 }
 
@@ -287,7 +286,7 @@ img {
 /* Areas */
 .areas-block {
     padding-top: 1.25rem;
-    border-top: 1px solid var(--warm-300);
+    border-top: 1px solid var(--gray-200);
 }
 
 .section-label {
@@ -402,7 +401,7 @@ img {
 
 /* === MEMBERSHIPS SECTION === */
 .memberships {
-    background: var(--warm-50);
+    background: var(--gray-50);
     padding: 5rem 2rem;
 }
 
@@ -428,21 +427,21 @@ img {
 
 .membership-list li {
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 1.75rem;
     font-size: 0.9375rem;
     line-height: 1.6;
     color: var(--slate-600);
 }
 
 .membership-list li::before {
-    content: '';
+    content: '\f0da';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
     position: absolute;
     left: 0;
-    top: 0.5rem;
-    width: 6px;
-    height: 6px;
-    background: var(--slate-400);
-    border-radius: 50%;
+    top: 0;
+    color: var(--slate-500);
+    font-size: 0.875rem;
 }
 
 /* === AFFILIATIONS SECTION === */
@@ -488,14 +487,14 @@ img {
 }
 
 .logo-link img {
-    height: 55px;
+    height: 65px;
     width: auto;
     object-fit: contain;
 }
 
 /* === CONTACT SECTION === */
 .contact {
-    background: var(--warm-50);
+    background: var(--gray-50);
     padding: 5rem 2rem;
 }
 
@@ -540,7 +539,7 @@ img {
 .contact-icon {
     width: 50px;
     height: 50px;
-    background: var(--warm-100);
+    background: var(--gray-100);
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
